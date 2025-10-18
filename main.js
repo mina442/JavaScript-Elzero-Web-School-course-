@@ -30,11 +30,16 @@ let b = 20;
 let pair = `${b}${a}_`;
 let result = pair.repeat(3) ;
 console.log(`_${a}_${result}_${b}_`); // _21_2021_2021_2021_20_
-console.log(`I'm In \
-\\\
-Love \\ """ '''\
-++ With ++\
-\"""\"""\
-\"\"JavaScript\"\"\``);
+console.log(
+`I'm In \\\\ Love \\ """ '''\ ++ With ++\
+\"""\"""\ \"\"JavaScript\"\"\``);
+console.log(
+  'I\'m In\n' +
+  '\\\\\n' +
+  'Love \\\\ """ \'\'\'\n' +
+  '++ With ++\n' +
+  '\\"""\\""\"\n' +
+  '""JavaScript""``'
+);
+console.log('`I\'m In \n \\\\ \n Love \\\\ \"\"\" \'\'\' \n ++ with ++ \\ \"\"\" \\ \"\"\" \n""javascript"" \``');
 
-console.log('`I\'m In \n \\\\ \n Love \\\\ \"\"\" \'\'\' \n ++ with ++ \\ \"\"\" \\ \"\"\" \n""javascript"" \``')
