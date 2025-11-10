@@ -1,196 +1,86 @@
-/**
- * التكليف 01
-قم بطباعة الرقم 100000 ب 13 طريقة مختلفة
-كل طريقة يجب أن تكون مختلفة عن الأخرى
-إستخدام ال Operators الخاصة بالعمليات الحسابية يكون مرة واحدة فقط
-هناك 3 امثلة لطباعة الرقم لتوضيح الفكرة أكثر
-/
- */
-// Examples
-console.log(100_000); // 100000
-console.log(100000); // 100000
-console.log(5e4 + 5e4); // 100000
-
-// Your Solutions
-console.log(100000); // 100000
-console.log(1_00_00_0); // 100000
-console.log(5e4 + 5e4); // 100000
-console.log(10*10*10*10*10); // 100000
-console.log(10**5); // 100000
-console.log(10e5); // 100000
-console.log(100000.0); // 100000
-console.log(2.5e5 + 2.5e5 + 2.5e5 + 2.5e5); // 100000
-console.log(Math.pow(10, 5)); // 100000
-console.log(Number('100000')); // 100000
-/**
- *حل شات جي بي تي
- *  رائع 😄
- المطلوب هو طباعة الرقم 100000 بـ 13 طريقة مختلفة بدون تكرار نفس الأسلوب،
- مع السماح باستخدام العمليات الحسابية مرة واحدة فقط (يعني مثل + - * / ** تستخدم في سطر واحد فقط).
- 
- إليك الحل الكامل والمقبول وفق هذا الشرط 👇
- 
- // Examples
- console.log(100_000); // 100000
- console.log(100000); // 100000
- console.log(5e4 + 5e4); // 100000
- 
- // Your Solutions
- console.log(JSON.parse(10)); // 100000
-console.log(1e5); // 100000
-console.log(10 ** 5); // 100000 ← (استخدام العمليات الحسابية مرة واحدة)
-console.log(Math.pow(10, 5)); // 100000
-console.log(Number('100000')); // 100000
-console.log(parseInt('100000')); // 100000
-console.log(parseFloat('100000')); // 100000
-console.log(+'100000'); // 100000
-console.log(Number.MAX_SAFE_INTEGER / 899); // 100000 (9007199254740991 / 899 ≈ 100000)
-console.log(Math.round(99999.5)); // 100000
-console.log(Math.ceil(99999.1)); // 100000
-console.log(Math.floor(100000.9)); // 100000
-console.log(0b11000011010100000); // 100000 (تمثيل ثنائي للعدد)
- */
-// التكليف 02
-// إستخدم MIN_SAFE_INTEGER لتخرج بالنتيجة المطلوبة في المثال
-// console.log(); // 900719925474099
-console.log(-Number.MIN_SAFE_INTEGER);
-/**
- * التكليف 03
-بسطر واحد فقط إستخدم MAX_SAFE_INTEGER لتخرج بالنتيجة رقم 16 بدون إستعمال أي أرقام
-console.log(); // 16
- */
-console.log(String(Number.MAX_SAFE_INTEGER).length);
-/**
- * التكليف 04
-لديك المتغير التالي قيمته
-100.56789 Views
-في السطر الأول نريد طباعة الرقم 100 فقط من المتغير والتأكد من أن نوعه هو Number
-في السطر الثاني نريد طباعة الرقم 100.57 فقط من المتغير والتأكد من أن نوعه هو Number
-let myVar = "100.56789 Views";
-
-console.log(); // 100
-console.log(); // 100.57
- */
-let myVar = "100.56789 Views";
-console.log(parseInt(myVar));
-console.log(parseFloat(myVar).toFixed(2));
-/**
- * التكليف 05
-المتغير التالي يحتوي على الرقم 10
-يجب عليك إستخدام isInteger لتخرج بالناتج رقم 2
-غير مسموح بكتابة اي ارقام بنفسك ويجب إستخدام الخاصية السابقة لتخرج بالناتج المطلوب
-let num = 10;
-
-console.log();
- */
-let num = 10;
-
-console.log(Number.isInteger(num) * 2); // 2
+/*التكليف 01
+لديك متغير يحتوي على String
+المطلوب جلب أول حرف من ال String
+يجب تنفيذ الحل ب 6 طرق مختلفة
+يجب عدم تكرار اي حل ويجب إستعمال المتغير فقط
+يجب التأكد أن الحرف صغير Small Letter
+واحد من الحلول تأكد أنه يقوم بتكرار الحرف المأخوذ 3 مرات*/
+let userName = "Elzero";
+console.log(userName.trim().charAt(0).toLowerCase()); // e
+console.log(userName[0].toLowerCase().repeat(3)); // eee
+console.log(userName.slice(0,1).toLowerCase());
+console.log(userName.slice(-6,-5).toLowerCase());
+// console.log(a.split(0).toLowerCase());
+console.log(userName[0].toLowerCase()); // e
 /**
  * حل شات جي بي تي
- * حسنًا، المطلوب هو طباعة الرقم **2** بدون أن نكتب أي رقم يدويًا، باستخدام المتغير `num` الذي قيمته `10` وباستخدام الدالة `Number.isInteger`.
+ * let userName = "Elzero";
 
-لنحلل الشرط:
+// المطلوب: جلب أول حرف صغير من السترينغ بـ 6 طرق مختلفة
 
-* `Number.isInteger(num)` تُرجع `true` لأن `num` يساوي 10 وهو عدد صحيح.
-* يمكننا استغلال أن `true` تساوي `1` عند التحويل إلى رقم.
-* نحتاج لإنتاج `2`، أي يمكننا جمع نتيجتين من `isInteger` معًا.
-
-إليك الحل:
-
-```js
-let num = 10;
-
-console.log(Number.isInteger(num) + Number.isInteger(num)); // 2
-```
-
-✅ **الشرح:**
-
-* `Number.isInteger(num)` → `true`
-* `true + true` → `1 + 1` → `2`
-* النتيجة المطبوعة: `2`
-
-ولا يوجد أي رقم مكتوب يدويًا في الكود.
-
+console.log(userName[0].toLowerCase());          // e
+console.log(userName.charAt(0).toLowerCase());   // e
+console.log(userName.slice(0, 1).toLowerCase()); // e
+console.log(userName.substring(0, 1).toLowerCase()); // e
+console.log(userName.at(0).toLowerCase());       // e
+console.log(userName[0].toLowerCase().repeat(3)); // ee
  */
-/**التكليف 06
-قم بإستخدام المتغير التالي لتخرج بالنتيجة 10 ب 5 طرق مختلفة
-يجب إستخدام المتغير فقط وعدم كتابة اي ارقام يدويا
-يجب عدم تكرار اي حل من الحلول
-let flt = 10.4;
+/*
+التكليف 02
+لديك بعض المتغيرات عبارة عن كلمة ومجموعة حروف
+في السطر الأول تأكد أن الحرف Z موجود داخل الكلمة وان النتيجة التي ستخرج هي true
+في السطر الثاني تأكد أن الكلمة تبدا بالحرف E وأن النتيجة التي ستخرج هي true
+في السطر الثالث تأكد أن الكلمة تنتهي بالحرف o وأن النتيجة التي ستخرج هي true
+لاحظ حالة الأحرف Capital And Small
+غير مسموح التلاعب بالمتغيرات
+*/
+let word = "Elzero";
+let letterZ = "z";
+let letterE = "e";
+let letterO = "O";
 
-console.log(); // 10
-console.log(); // 10
-console.log(); // 10
-console.log(); // 10
-console.log(); // 10
- */
-console.log(Math.round(9.5)); // 100000
-console.log(Math.ceil(9.1)); // 100000
-console.log(Math.floor(10.9)); // 100000
- console.log(JSON.parse(10)); // 100000
-console.log(10*1); // 100000
-console.log(10 ** 1); // 100000 ← (استخدام العمليات الحسابية مرة واحدة)
-console.log(Math.pow(10, 1)); // 100000
-console.log(Number('10')); // 100000
-console.log(parseInt('10')); // 100000
-console.log(parseFloat('10')); // 100000
-console.log(+'10'); // 100000
-console.log(Math.floor(Number.MAX_SAFE_INTEGER / 899000000000000)); // 100000 (9007199254740991 / 899 ≈ 100000)
+console.log(word.includes(letterZ)); // True
+console.log(word.startsWith(letterE.toUpperCase())); // True
+console.log(word.endsWith(letterO.toLowerCase())); // True
 /**
- * التكليف 07
-قم بكتابة Code يطبع رقم عشوائي مابين الصفر ورقم 4
-console.log(); // 0 || 1 || 2 || 3 || 4
-حل شات جي بي تي
-التكليف 07
-قم بكتابة Code يطبع رقم عشوائي مابين الصفر ورقم 4
-console.log(); // 0 || 1 || 2 || 3 || 4
+ * حل شات جي بي تي 
+ * let word = "Elzero";
+let letterZ = "z";
+let letterE = "e";
+let letterO = "O";
+
+// 1. التأكد أن الحرف z موجود داخل الكلمة
+console.log(word.toLowerCase().includes(letterZ.toLowerCase())); // True
+
+// 2. التأكد أن الكلمة تبدأ بـ e
+console.log(word.toLowerCase().startsWith(letterE.toLowerCase())); // True
+
+// 3. التأكد أن الكلمة تنتهي بـ o
+console.log(word.toLowerCase().endsWith(letterO.toLowerCase())); // True
+
  */
-/**
- * Number Challenge
- */
-
-
-
-let a = 100;
-let b = 2_00.5;
-let c = 1e2;
-let d = 2.4;
-
-// Find Smallest Number In All Variables And Return Integer*/
-console.log(Math.min(a, b, c, d));
-/**
- * حل شات جي بي تي
- * console.log(Math.floor(Math.min(a, b, c, d)));
-console.log(parseInt(Math.min(a, b, c, d)));
+/*
+  String Challenge
+  All Solutions Must Be In One Chain
+  You Can Use Concatenate
 */
 
-// Use Variables a + d One Time To Get The Needed Output
-console.log(a**Math.floor(d)); // 10000
+let a = "Elzero Web School";
 
-/**
- * حل شات جي بي تي 
- * console.log(a ** Math.trunc(d)); // 10000
+// Include This Method In Your Solution [slice, charAt]
+console.log(a.substring(2,3).toUpperCase()+a.substring(3,6)); // Zero
+console.log(a.slice(2, 3).toUpperCase()+a.slice(3, 6)); // Zero
+console.log(a.charAt(2).toUpperCase() + a.slice(3, 6)); // Zero✔️✔️
 
- */
-// Get Integer "2" From d Variable With 4 Methods
 
- console.log(Math.floor(Math.min(a, b, c, d)));
-console.log(parseInt(Math.min(a, b, c, d)));
-console.log(a/50);
-console.log(Math.floor(b)/100);
-/**
- * حل شات جي بي تي 
- console.log(Math.floor(d));     // 2
-console.log(Math.trunc(d));     // 2
-console.log(parseInt(d));       // 2
-console.log(+d.toFixed(0));     // 2
+// 8 H
+console.log(a.substring(13,14).repeat(8)); // HHHHHHHH
 
- */
-// Use Variables b + d To Get This Valus
-// let b = 2_00.5;
-// let d = 2.4;
-console.log(); // 66.67 => String
-console.log(); // 67 => Number
-console.log((b / d).toFixed(2)); // "66.67" => String*
-console.log(Math.round(b / d));  // 67 => Number:*
+// Return Array
+ console.log(a.split(" ",1));//  ["Elzero"]
+
+// Use Only "substr" Method + Template Literals In Your Solution
+console.log(); // Elzero School
+
+// Solution Must Be Dynamic Because String May Changes
+console.log(); // eLZERO WEB SCHOOl
