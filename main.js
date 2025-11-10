@@ -1,86 +1,83 @@
-/*التكليف 01
-لديك متغير يحتوي على String
-المطلوب جلب أول حرف من ال String
-يجب تنفيذ الحل ب 6 طرق مختلفة
-يجب عدم تكرار اي حل ويجب إستعمال المتغير فقط
-يجب التأكد أن الحرف صغير Small Letter
-واحد من الحلول تأكد أنه يقوم بتكرار الحرف المأخوذ 3 مرات*/
-let userName = "Elzero";
-console.log(userName.trim().charAt(0).toLowerCase()); // e
-console.log(userName[0].toLowerCase().repeat(3)); // eee
-console.log(userName.slice(0,1).toLowerCase());
-console.log(userName.slice(-6,-5).toLowerCase());
-// console.log(a.split(0).toLowerCase());
-console.log(userName[0].toLowerCase()); // e
+console.log("Osama" !== "Ahmed");
+console.log(typeof "Osama" === typeof "Ahmed");
+// التكليف 01
+// ضع العلامة المناسبة من ال Operators التي تعلمتها بدلا من علامة الإستفهام لتكون النتيجة True
+console.log(100 == "100"); // true
+console.log(100 != 1000); // true
+console.log(110 -100 == 10 != 20); // true
+console.log(-10 == "-10"); // true
+console.log(+ -50 != +"-40"); // true
+console.log(- 10 != -"-40"); // true
+console.log(+ "10" == 10); // true
+console.log(+ 20 != false); // true
+/**
+ * حل شات جي بي تي console.log(100 == "100");      // true
+console.log(100 < 1000);        // true
+console.log(110 > 100 > 10 < 20); // true
+console.log(-10 == "-10");      // true
+console.log(+(-50) < +("-40")); // true
+console.log(10 < -"-40");       // true
+console.log(+"10" === 10);      // true
+console.log(20 || false);       // true
+
+ */
+// التكليف 02
+// لديك متغيرين فيهم رقمين مختلفيين والمطلوب إستعمال ال Operators التي تعلمتها مع المتغيرات لتظهر النتيجة True
+// ممنوع إستخدام اي أرقام نهائيا
+// يجب إستخدام المتغير مرة واحدة فقط في كل حل
+// يجب عدم تكرار ال Operator ويستخدم مرة واحدة في واحد من الحلول
+// أقل عدد من الحلول هو 6 حلول
+let num1 = 10;
+let num2 = 20;
+
+console.log(num1 !=  num2); // true
+console.log(num1 !== num2); // true
+console.log(num1 <   num2); // true
+console.log(num1 <=  num2); // true
+console.log(num2 >    num1); // true
+console.log(num2 >=  num1); // true
 /**
  * حل شات جي بي تي
- * let userName = "Elzero";
+ * let num1 = 10;
+let num2 = 20;
 
-// المطلوب: جلب أول حرف صغير من السترينغ بـ 6 طرق مختلفة
+// 1. أكبر من <
+console.log(num1 < num2); // true ✅
 
-console.log(userName[0].toLowerCase());          // e
-console.log(userName.charAt(0).toLowerCase());   // e
-console.log(userName.slice(0, 1).toLowerCase()); // e
-console.log(userName.substring(0, 1).toLowerCase()); // e
-console.log(userName.at(0).toLowerCase());       // e
-console.log(userName[0].toLowerCase().repeat(3)); // ee
+// 2. ليس مساوٍ !==
+console.log(num1 !== num2); // true ✅
+
+// 3. أصغر أو يساوي <= (نعكس الترتيب)
+console.log(num2 >= num1); // true ✅
+
+// 4. معامل الجمع + مع التحويل إلى Boolean
+console.log((num1 + num2) > num2); // true ✅
+
+// 5. الطرح -
+console.log((num2 - num1) > num1 - num1); // true ✅
+
+// 6. القسمة /
+console.log((num2 / num1) > (num1 / num2)); // true ✅
+
  */
-/*
-التكليف 02
-لديك بعض المتغيرات عبارة عن كلمة ومجموعة حروف
-في السطر الأول تأكد أن الحرف Z موجود داخل الكلمة وان النتيجة التي ستخرج هي true
-في السطر الثاني تأكد أن الكلمة تبدا بالحرف E وأن النتيجة التي ستخرج هي true
-في السطر الثالث تأكد أن الكلمة تنتهي بالحرف o وأن النتيجة التي ستخرج هي true
-لاحظ حالة الأحرف Capital And Small
-غير مسموح التلاعب بالمتغيرات
-*/
-let word = "Elzero";
-let letterZ = "z";
-let letterE = "e";
-let letterO = "O";
+// التكليف 03
+// لديك ثلاث متغيرات فيهم أرقام مختلفة والمطلوب إستعمال ال Operators التي تعلمتها بدلا من علامة الإستفهام لتظهر النتيجة True
+// ممنوع إستخدام اي أرقام نهائيا
+let a = 20;
+let b = 30;
+let c = 10;
 
-console.log(word.includes(letterZ)); // True
-console.log(word.startsWith(letterE.toUpperCase())); // True
-console.log(word.endsWith(letterO.toLowerCase())); // True
+console.log(a < b && a > c || a < b); // true
+console.log(a < b || a > c); // true
+console.log(!(a > b) && !(a > b) && !(a < c) && !(a < c)); // true
 /**
- * حل شات جي بي تي 
- * let word = "Elzero";
-let letterZ = "z";
-let letterE = "e";
-let letterO = "O";
+ * حل شات جي بي تي
+ * let a = 20;
+let b = 30;
+let c = 10;
 
-// 1. التأكد أن الحرف z موجود داخل الكلمة
-console.log(word.toLowerCase().includes(letterZ.toLowerCase())); // True
-
-// 2. التأكد أن الكلمة تبدأ بـ e
-console.log(word.toLowerCase().startsWith(letterE.toLowerCase())); // True
-
-// 3. التأكد أن الكلمة تنتهي بـ o
-console.log(word.toLowerCase().endsWith(letterO.toLowerCase())); // True
+console.log(a < b && a > c || a < b);          // true
+console.log(a < b && b > c);                   // true
+console.log(!(a == b) && !(a > b) && (a > c) && !!(a > c)); // true
 
  */
-/*
-  String Challenge
-  All Solutions Must Be In One Chain
-  You Can Use Concatenate
-*/
-
-let a = "Elzero Web School";
-
-// Include This Method In Your Solution [slice, charAt]
-console.log(a.substring(2,3).toUpperCase()+a.substring(3,6)); // Zero
-console.log(a.slice(2, 3).toUpperCase()+a.slice(3, 6)); // Zero
-console.log(a.charAt(2).toUpperCase() + a.slice(3, 6)); // Zero✔️✔️
-
-
-// 8 H
-console.log(a.substring(13,14).repeat(8)); // HHHHHHHH
-
-// Return Array
- console.log(a.split(" ",1));//  ["Elzero"]
-
-// Use Only "substr" Method + Template Literals In Your Solution
-console.log(); // Elzero School
-
-// Solution Must Be Dynamic Because String May Changes
-console.log(); // eLZERO WEB SCHOOl
