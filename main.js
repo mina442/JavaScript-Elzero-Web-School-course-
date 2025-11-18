@@ -1,264 +1,254 @@
 // التكليف 01
-// لديك متغير يحتوي على رقم والمطلوب فحص الرقم وعمل اللازم بناء على الشروط
-// إذا كان الرقم أصغر من 10 قم بطباعة الرقم وقبله صفرين
-// إذا كان الرقم أكبر من 10 وأصغر من 100 قم بطباعة الرقم وقبله صفر
-// إذا كان الرقم أكبر من أو يساوي 100 قم بطباعة الرقم كما هو
-// Test Case 1
-let num = 9; // "009"
-if (num < 10) {
-  console.log(("00"+num));
+// لديك متغير يحتوي على اليوم الخاص بالموعد وبواسطة ال Switch قم بإظهار رسالة للشخص على حسب اليوم المختار مع عمل الشروط التالية
+// يجب التأكد أن إسم اليوم لا توجد قبله مسافات ولا بعده ويكون أول حرف Capital حتى لو تم كتابة الإسم بحروف صغيرة
+// إذا كانت قيمة المتغير هي يوم الجمعة أو السبت أو الأحد تظهر له أنه لا توجد مواعيد متاحة في هذه الأيام
+// إذا كانت قيمة المتغير هي يوم الإثنين أو الخميس يكون المواعيد المتاحة من الساعة العاشرة صباحا وحتى الخامسة مساء
+// إذا كانت قيمة المتغير هي يوم الثلاثاء يكون المواعيد المتاحة من الساعة العاشرة صباحا وحتى السادسة مساء
+// إذا كانت قيمة المتغير هي يوم الأربعاء يكون المواعيد المتاحة من الساعة العاشرة صباحا وحتى السابعة مساء
+// إذا كانت قيمة المتغير هي يوم خاطيء تظهر له رسالة أن اليوم فيه خطأ
+let day1 = "   friday  ";
+// You Need To Remove Spaces And Make First Letter Capital => Friday
+switch (day1.trim().replace("f","F")) {
+    case "Friday":
+        console.log('Friday');
+        break;
 }
-// Test Case 2
-let num12 = 20; // "020"
-if (num12 > 10 && num12 < 100) {
-  console.log(("0"+num12));
+let day2 = "Friday";
+let day3 = "Saturday";
+let day4 = "Sunday";
+// Output => "No Appointments Available"
+switch (day2 || day3 ||day4) {
+    case "Friday":
+        console.log('No Appointments Available');
+        break;
+    case "Saturday":
+        console.log('No Appointments Available');
+        break;
+    case "Sunday":
+        console.log('No Appointments Available');
+        break;
 }
-// Test Case 3
-let num13 = 110; // "110"
-if (num13 > 100) {
-  console.log(num13);
+
+let day5 = "Monday";
+let day6 = "Thursday";
+// Output => "From 10:00 AM To 5:00 PM"
+switch (day5 || day6) {
+    case "Monday":
+        console.log('From 10:00 AM To 5:00 PM');
+        break;
+    case "Thursday":
+        console.log('From 10:00 AM To 5:00 PM');
+        break;
 }
+let day7 = "Tuesday";
+// Output => "From 10:00 AM To 6:00 PM"
+
+let day8 = "Wednesday";
+// Output => "From 10:00 AM To 7:00 PM"
+
+let day = "World";
+// Output => "Its Not A Valid Day"
+// // chat gpt
+// // let day = "   friday  ";
+
+// // 1) إزالة المسافات من البداية والنهاية
+// day = day.trim();
+
+// // 2) جعل أول حرف Capital والباقي small
+// day = day.charAt(0).toUpperCase() + day.slice(1).toLowerCase();
+
+// console.log(day); // Friday
+
+// 3) استخدام الـ Switch لإظهار المواعيد
+// switch (day) {
+//   case "Friday":
+//   case "Saturday":
+//   case "Sunday":
+//     console.log("No Appointments Available");
+//     break;
+
+//   case "Monday":
+//   case "Thursday":
+//     console.log("From 10:00 AM To 5:00 PM");
+//     break;
+
+//   case "Tuesday":
+//     console.log("From 10:00 AM To 6:00 PM");
+//     break;
+
+//   case "Wednesday":
+//     console.log("From 10:00 AM To 7:00 PM");
+//     break;
+
+//   default:
+//     console.log("Its Not A Valid Day");
+// }
+// *
+//   Switch Challenge
+// */ 
+
+let job = "Manager";
+let salary = 0;
+// switch (holidays) {
+//     case 0:
+//         money = 5000;
+//         console.log(`My Money is ${money}`);
+//         break;
+// }
+
+switch (job) {
+    case "Manager":
+        salary = 8000;
+        console.log(`${salary}`);
+        break;
+    case "IT":
+    case "Support":
+        salary = 6000;
+        console.log(`${salary}`);
+        break;
+    case "Developer":
+    case "Designer":
+        salary = 6000;
+        console.log(`${salary}`);
+        break;
+    default:
+        salary = 4000;
+        console.log(`${salary}`);
+        break;
+}
+// let job = "Manager";
+// let salary = 0;
+
+// switch (job) {
+//   case "Manager":
+//     salary = 8000;
+//     break;
+
+//   case "IT":
+//   case "Support":
+//     salary = 6000;
+//     break;
+
+//   case "Developer":
+//   case "Designer":
+//     salary = 7000;
+//     break;
+
+//   default:
+//     salary = 4000;
+// }
+
+// console.log(`Salary Is ${salary}`);
+
+/*
+  If Challenge
+*/
+
+let holidays = 0;
+let money = 0;
+// if (job === "Manager") {
+//   salary = 8000;
+// } else if (job === "IT" || job === "Support") {
+//   salary = 6000;
+// } else if (job === "Developer" || job === "Designer") {
+//   salary = 7000;
+// } else {
+//   salary = 4000;
+// }
+if (holidays === 0) {
+//   case 0:
+    money = 5000;
+    console.log(`My Money is ${money}`);
+} else if (holidays === 1 || holidays === 2) {
+//   case 1:
+//   case 2:
+    money = 3000;
+    console.log(`My Money is ${money}`);
+} else if (holidays === 3) {
+    money = 2000;
+    console.log(`My Money is ${money}`);
+} else if (holidays === 4) {
+//   case 4:
+    money = 1000;
+    console.log(`My Money is ${money}`);
+    // break;
+    } else if (holidays === 5) {
+//   case 5:
+    money = 0;
+    console.log(`My Money is ${money}`);
+    // break;
+    //   default:
+    } else{
+    money = 0;
+    console.log(`My Money is ${money}`);
+}
+// let holidays = 0;
+// let money = 0;
+
+// if (holidays === 0) {
+//   money = 5000;
+// } else if (holidays === 1 || holidays === 2) {
+//   money = 3000;
+// } else if (holidays === 3) {
+//   money = 2000;
+// } else if (holidays === 4) {
+//   money = 1000;
+// } else if (holidays === 5) {
+//   money = 0;
+// } else {
+//   money = 0;
+// }
+
+// console.log(`My Money is ${money}`);
+
 /**
- * حل شات جي بي تي
- * let num = 9;
+  Switch Challenge
 
-if (num < 10) {
-  console.log(`00${num}`);
-} else if (num >= 10 && num < 100) {
-  console.log(`0${num}`);
+
+let job = "Manager";
+let salary = 0;
+
+if (job === "Manager") {
+  salary = 8000;
+} else if (job === "IT" || job === "Support") {
+  salary = 6000;
+} else if (job === "Developer" || job === "Designer") {
+  salary = 7000;
 } else {
-  console.log(`${num}`);
+  salary = 4000;
 }
-console.log(num < 10 ? `00${num}` : num < 100 ? `0${num}` : `${num}`);
+
+
+  If Challenge
+
+
+let holidays = 0;
+let money = 0;
+
+switch (holidays) {
+  case 0:
+    money = 5000;
+    console.log(My Money is ${money});
+    break;
+  case 1:
+  case 2:
+    money = 3000;
+    console.log(My Money is ${money});
+    break;
+  case 3:
+    money = 2000;
+    console.log(My Money is ${money});
+    break;
+  case 4:
+    money = 1000;
+    console.log(My Money is ${money});
+    break;
+  case 5:
+    money = 0;
+    console.log(My Money is ${money});
+    break;
+  default:
+    money = 0;
+    console.log(My Money is ${money});
+}
  */
-// التكليف 02
-// لديك ثلاث متغيرات والمطلوب فحص الشروط التالية وإظهار الرسالة بنفس شكل ال Output في المثال
-// السطر الأول إذا كانت قيمة المتغير الأول هي نفس قيمة المتغير الثاني
-// السطر الثاني إذا كانت قيمة المتغير الأول هي نفس قيمة المتغير الثاني ولكن النوع مختلف
-// السطر الثالث إذا كانت قيمة المتغير الأول ليست نفس قيمة المتغير الثالث وليست ايضا نفس النوع
-// السطر الرابع إذا كانت قيمة المتغير الثاني لا تساوي المتغير الثالث ولكنهم نفس النوع
-// يجب فحص نوع البيانات والقيمة بنفسك لأن البيانات يمكن ان يتغير نوعها وقيمتها
-let num14 = 9;
-let str = "9";
-let str2 = "20";
-
-// Output
-
-if(num14 == str)  
-{
-  console.log(`${num14} Is The Same Value As ${str}`);
-}
-
-
-// 1️⃣ إذا كانت قيمة المتغير الأول هي نفس قيمة المتغير الثاني
-// if (num1 == str) {
-//   console.log(`${num1} Is The Same Value As ${str}`);
-// }
-
-if(num14 == str && typeof num14 !== str ) {
-  console.log(`${num14} Is The Same Value As ${str} But Not The Same Type`);
-  
-}
-// 2️⃣ إذا كانت نفس القيمة لكن النوع مختلف
-// if (num1 == str && num1 !== str) {
-//   console.log(`${num1} Is The Same Value As ${str} But Not The Same Type`);
-// }
-
-if(num14 != str2 && typeof num14 !== typeof str2 ) {
-  console.log(`${num14} Is Not The Same Value Or The Same Type As ${str2}`);
-  
-}
-// 3️⃣ إذا كانت القيمة والنوع مختلفين عن المتغير الثالث
-// if (num1 !== str2 && typeof num1 !== typeof str2) {
-//   console.log(`${num1} Is Not The Same Value Or The Same Type As ${str2}`);
-// }
-
-if (str !== str2 && typeof str === typeof str2) {
-  console.log(`${str} Is The Same Type As ${str2} But Not The Same Value`);
-  
-}
-// 4️⃣ إذا كانت القيمة مختلفة ولكن النوع نفسه بين الثاني والثالث
-// if (str !== str2 && typeof str === typeof str2) {
-//   console.log(`${str} Is The Same Type As ${str2} But Not The Same Value`);
-// }
-
-
-
-
-// التكليف 03
-// لديك ثلاث متغيرات والمطلوب فحص الشروط التالية وإظهار الرسالة بنفس شكل ال Output في المثال
-// يجب عمل جميع الحلول ب If Condition واحدة
-// السطر الأول تأكد أن المتغير الثالث أكبر من الأول ولا يساوي الثاني في النوع
-// السطر الثاني تأكد أن المتغير الثالث أكبر من الأول ومساوي للثاني في القيمة ولا يساوي الثاني في النوع
-// السطر الثالث تأكد أن قيمة المتغير الثالث لا تساوي الأول من ناحية القيمة والنوع ولا تساوي الثاني من ناحية النوع
-// يجب فحص نوع البيانات والقيمة بنفسك لأن البيانات يمكن ان يتغير نوعها وقيمتها
-let num15 = 10;
-let num26 = 30;
-let num37 = "30";
-
-// Needed Output
-if (+num37 > num15 && typeof num15 !== typeof num37) {
-  console.log(`${num37} Is Larger Than ${num15} And Type string Not The Same Type As number`);
-  
-}if (+num37 > num15 && num26 == num37 && typeof num26 !== typeof num37) {
-  console.log(`${num37} Is Larger Than ${num15} And Value Is The Same As ${num26} And Type string Not The Same Type As number`);
-  
-}if (num37 !== num15 && typeof num15 !== typeof 'num26') {
-  console.log(`${num37} Value And Type Is Not The Same As ${num15} And Type Is Not The Same As ${num26}`);
-  
-}
-
-
-// if (num3 > num1 && typeof num3 !== typeof num2) {
-//   console.log(`${num3} Is Larger Than ${num1} And Type ${typeof num3} Not The Same Type As ${typeof num2}`);
-// } else if (num3 > num1 && num3 == num2 && typeof num3 !== typeof num2) {
-//   console.log(`${num3} Is Larger Than ${num1} And Value Is The Same As ${num2} And Type ${typeof num3} Not The Same Type As ${typeof num2}`);
-// } else if (num3 !== num1 && typeof num3 !== typeof num1 && typeof num3 !== typeof num2) {
-//   console.log(`${num3} Value And Type Is Not The Same As ${num1} And Type Is Not The Same As ${num2}`);
-// }
-
-
-
-// التكليف 04
-// قم بتغيير محتوى المتغيرات لما هو مناسب لتكون جميع نتائج ال Conditions هي True ولا تقم أبدا بتعديل ال If Condition نفسه
-// // Edit What You Want Here
-
-let num1 = 10;
-let num2 = 10;
-let num3 = "10";
-let num4 = 20;
-
-/*
-  Do Not Edit Below This Line
-  Needed Output
-  True 7 Times
-*/
-
-// Condition 1
-
-if (num1 >= num2) {
-  console.log("True");
-} else {
-  console.log("False");
-}
-
-// Condition 2
-
-if (num1 >= num2 && num1 < num4) {
-  console.log("True");
-} else {
-  console.log("False");
-}
-
-// Condition 3
-
-if (num1 >= num2 && num1 !== num3)
-// if (num1 >= num2 && num1 === +num3)
-{
-  console.log("True");
-} else {
-  console.log("False");
-}
-
-// Condition 4
-
-if ((num1 + num2) <= num4) {
-  console.log("True");
-} else {
-  console.log("False");
-}
-
-// Condition 5
-
-if ((num1 + +num3) <= num4) {
-  console.log("True");
-} else {
-  console.log("False");
-}
-
-// Condition 6
-
-if ((num1 + num2 + num3) > num4) {
-  console.log("True");
-} else {
-  console.log("False");
-}
-
-// Condition 7
-
-if (num4 - (num1 + num3) + num2 !== 21) {
-  console.log("True");
-} else {
-  console.log("False");
-}
-/*
-  If Condition Challenge
-*/
-
-let a = 10;
-
-if (a < 10) {
-  console.log(10);
-} else if (a >= 10 && a <= 40) {
-  console.log("10 To 40");
-} else if (a > 40) {
-  console.log("> 40");
-} else {
-  console.log("Unknown");
-}
-let result =
-  a < 10 ? 10 :
-    a >= 10 && a <= 40 ? "10 To 40" :
-      a > 40 ? "> 40" : "Unknown";
-    // chat gpt
-// let result1 =
-//   a < 10 ? 10 :
-//   (a >= 10 && a <= 40) ? "10 To 40" :
-//    a > 40 ? "> 40" :
-//   "Unknown";
-console.log(result);
-// console.log(result1);
-
-// Write Previous Condition With Ternary If Syntax
-
-let st = "Elzero Web School";
-// جزد من السؤال 
-if (`${st.length*2}` === "34") {
-  console.log("Good");
-}
-// chat gpt
-// (st.length * 2).toString()
-
-
-// W Position May Change
-// if ("????" === "w") {
-//   console.log("Good");
-// }
-// cht gpt
-// if (st.toLowerCase()[st.toLowerCase().indexOf("w")] === "w") {
-//   console.log("Good");
-// }
-
-
-if (typeof st.length !== "string") {
-  console.log("Good");
-}
-
-if (typeof st.length === "number") {
-  console.log("Good");
-}
-
-if ("????" === "ElzeroElzero") {
-  console.log("Good");
-}
-// chat gpt
-// if (st.slice(0, 6) + st.slice(0, 6) === "ElzeroElzero") {
-//   console.log("Good");
-// }
-
-
-
-// let price =0;
-
-// console.log(`The Price Is ${price || 200}`);
-// console.log(`The Price Is ${price ?? 200}`);
